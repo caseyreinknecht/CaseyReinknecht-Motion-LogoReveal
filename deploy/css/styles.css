@@ -423,3 +423,15 @@ textarea {
 /* =============
     Footer
 ============= */
+#preloader-container {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-color: #DFD5CA;
+}
+#preloader-container > div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
