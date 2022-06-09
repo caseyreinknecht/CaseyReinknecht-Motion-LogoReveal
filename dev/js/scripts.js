@@ -49,22 +49,30 @@ function textFill(){
 
     let tl = gsap.timeline ();
 
-    tl.to("spritz", {textFillColor: "orange", ease: "slow(0.7, 0.7, false)"})
+    //tl.from("colorfill", {duration:1, opacity:0})
 
-    //tl.from(".dot", { delay: 1.5, ease: "power1.in", opacity:0 })
+    tl.from(".dot", { delay: 1.5, ease: "power1.in", opacity:0 })
+
+       ;
+
+    return tl;
+}
+
+function patternBack(){
+    let tl = gsap.timeline();
 
     tl.to(".orange", {
-       
-        duration: 0.7,
+        delay: 0,
+        duration: 1,
         scale: 0.3,
         y: 60,
         x: 10,
-        ease: "power1.in", 
+        ease: "power1.inOut", 
         opacity: 50,
         stagger: {
           grid: [4,6],
           from: "end",
-          axis: "x",//
+          axis: "x",
           amount: 1
            
           
@@ -74,31 +82,9 @@ function textFill(){
         
         ;
 
-       
-
-    return tl;
+        return tl;
 }
 
-//function patternBack(){
-    //let tl = gsap.timeline();
-
-    
-
-        //return tl;
-//}
-
-function dotFill(){
-
-    let tl = gsap.timeline ();
-
-   
-
-    tl.from(".dot", { delay: 1.5, ease: "power1.in", opacity:0 })
-
-       ;
-
-    return tl;
-}
 
 
 
@@ -113,6 +99,5 @@ function dotFill(){
 mainTL.add(patternMove(),"pattern")
 .add(textMotion(), "text")
 .add(textFill(), "textfill")
-//.add(patternBack(), "textfill")
-.add(dotFill(), "dot")
+.add(patternBack(), "textfill")
 ;
